@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ishfaq Dar — Python Backend Developer specializing in scalable APIs, microservices, and distributed systems." />
+  <meta name="keywords"    content="Python, FastAPI, Flask, Backend Developer, REST API, PostgreSQL, Docker" />
+  <meta name="author"      content="Ishfaq Dar" />
+  <meta property="og:title"       content="Ishfaq Dar — Python Backend Developer" />
+  <meta property="og:description" content="Building scalable APIs and reliable backend systems." />
+  <meta property="og:type"        content="website" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Ishfaq Dar — Python Backend Developer" />
+  <meta name="twitter:description" content="Building scalable APIs and reliable backend systems." />
+
+  <title>Ishfaq Dar — Python Backend Developer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+
+  <!-- ✅ Stylesheet — relative path -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="grid-bg"></div>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════ -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">ID<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#github">GitHub</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#github">GitHub</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+
+    <div class="container">
+      <div class="hero-inner">
+
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Available for Backend Roles
+          </div>
+          <h1 class="hero-name">Ishfaq<br>Dar</h1>
+          <p class="hero-title">Python Backend Developer</p>
+          <p class="hero-tagline">
+            Building scalable APIs, reliable backend systems, and high-performance
+            data pipelines. I turn complex problems into elegant, production-ready solutions.
+          </p>
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">⚡ View Projects</a>
+            <a href="Ishfaq_Dar_Resume.pdf" class="btn btn-ghost" download>↓ Resume</a>
+            <a href="#contact"  class="btn btn-ghost">✉ Contact</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num">1.3<span>+</span></div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">5.0<span>+</span></div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">3.5<span>k+</span></div>
+              <div class="stat-label">Lines of Python</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code Window -->
+        <div class="hero-visual">
+          <div class="code-window">
+            <div class="cw-header">
+              <div class="cw-dot"></div>
+              <div class="cw-dot"></div>
+              <div class="cw-dot"></div>
+              <span class="cw-filename">main.py</span>
+            </div>
+            <div class="cw-body">
+              <div class="code-line"><span class="c-cm"># FastAPI Production Backend</span></div>
+              <div class="code-line"><span class="c-kw">from</span> <span class="c-fn">fastapi</span> <span class="c-kw">import</span> FastAPI, Depends</div>
+              <div class="code-line"><span class="c-kw">from</span> <span class="c-fn">sqlalchemy.orm</span> <span class="c-kw">import</span> Session</div>
+              <div class="code-line"><span class="c-kw">from</span> <span class="c-fn">pydantic</span> <span class="c-kw">import</span> BaseModel</div>
+              <div class="code-line">&nbsp;</div>
+              <div class="code-line"><span class="c-var">app</span> = <span class="c-fn">FastAPI</span>(title=<span class="c-str">"Alex's API"</span>)</div>
+              <div class="code-line">&nbsp;</div>
+              <div class="code-line"><span class="c-dec">@app.get</span>(<span class="c-str">"/developer"</span>)</div>
+              <div class="code-line"><span class="c-kw">async def</span> <span class="c-fn">get_developer</span>():</div>
+              <div class="code-line">    <span class="c-kw">return</span> {</div>
+              <div class="code-line">        <span class="c-str">"name"</span>: <span class="c-str">"Ishfaq Dar"</span>,</div>
+              <div class="code-line">        <span class="c-str">"role"</span>: <span class="c-str">"Backend Developer"</span>,</div>
+              <div class="code-line">        <span class="c-str">"stack"</span>: [<span class="c-str">"Python"</span>, <span class="c-str">"FastAPI"</span>],</div>
+              <div class="code-line">        <span class="c-str">"status"</span>: <span class="c-str">"available"</span>,</div>
+              <div class="code-line">        <span class="c-str">"coffee"</span>: <span class="c-num">True</span><span class="typing-cursor"></span></div>
+              <div class="code-line">    }</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       ABOUT
+  ═══════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Backend engineer<br>who ships <span>real systems</span></h2>
+          <div class="section-divider"></div>
+          <p>I'm a Python Backend Developer with <strong>hands-on experience</strong> designing and building scalable web APIs, microservices, and data-intensive backend systems that handle real production traffic.</p>
+          <p>My expertise centers on <strong>FastAPI and Flask</strong> for building high-performance REST APIs, <strong>PostgreSQL and MongoDB</strong> for data modeling, and <strong>Docker + CI/CD pipelines</strong> for smooth deployment workflows.</p>
+          <p>I care deeply about <strong>clean architecture, performance, and reliability</strong>. Every system I build is designed to scale, tested to be correct, and documented for long-term maintainability.</p>
+          <div class="about-values">
+            <div class="value-card">
+              <div class="value-icon">⚡</div>
+              <div class="value-title">Performance First</div>
+              <div class="value-desc">Sub-100ms API responses through query optimization and caching</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🏗</div>
+              <div class="value-title">Clean Architecture</div>
+              <div class="value-desc">Layered design patterns that scale without technical debt</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🔒</div>
+              <div class="value-title">Security Mindset</div>
+              <div class="value-desc">Auth, validation, and OWASP best practices from day one</div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">📊</div>
+              <div class="value-title">Data-Driven</div>
+              <div class="value-desc">Monitoring and observability to make smart engineering decisions</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="avatar-frame">
+            <div class="avatar-ring"></div>
+            <div class="avatar-ring-2"></div>
+            <div class="avatar-inner">
+  <img src="Blue Coat Specs Full.png" alt="Ishfaq Dar" style="width:100%;height:100%;object-fit:cover;object-position:top center;border-radius:50%;">
+          </div>
+          <div class="floating-badge fb-1"><strong>FastAPI</strong> &nbsp;·&nbsp; REST Expert</div>
+          <div class="floating-badge fb-2"> &nbsp;·&nbsp; <strong>Python</strong></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       SKILLS
+  ═══════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="skills-header reveal">
+        <div class="section-label">Technical Skills</div>
+        <h2 class="section-title">My <span>tech stack</span></h2>
+        <p class="section-subtitle">Tools and technologies I use to build production backend systems.</p>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category reveal reveal-delay-1">
+          <div class="sc-icon">🐍</div>
+          <div class="sc-title">Backend Development</div>
+          <div class="skill-tags">
+            <span class="stag stag-blue">Python</span>
+            <span class="stag stag-blue">FastAPI</span>
+            <span class="stag stag-blue">Flask</span>
+            <span class="stag stag-blue">REST APIs</span>
+            <span class="stag stag-blue">GraphQL</span>
+            <span class="stag stag-blue">WebSockets</span>
+            <span class="stag stag-blue">Celery</span>
+            <span class="stag stag-blue">Redis</span>
+            <span class="stag stag-blue">JWT / OAuth2</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal reveal-delay-2">
+          <div class="sc-icon">🗄</div>
+          <div class="sc-title">Databases</div>
+          <div class="skill-tags">
+            <span class="stag stag-green">PostgreSQL</span>
+            <span class="stag stag-green">MySQL</span>
+            <span class="stag stag-green">MongoDB</span>
+            <span class="stag stag-green">Redis</span>
+            <span class="stag stag-green">SQLAlchemy</span>
+            <span class="stag stag-green">Alembic</span>
+            <span class="stag stag-green">SQL Optimization</span>
+            <span class="stag stag-green">Indexing</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal reveal-delay-3">
+          <div class="sc-icon">🛠</div>
+          <div class="sc-title">Tools &amp; DevOps</div>
+          <div class="skill-tags">
+            <span class="stag stag-gold">Docker</span>
+            <span class="stag stag-gold">Git</span>
+            <span class="stag stag-gold">Linux</span>
+            <span class="stag stag-gold">Nginx</span>
+            <span class="stag stag-gold">GitHub Actions</span>
+            <span class="stag stag-gold">CI/CD</span>
+            <span class="stag stag-gold">AWS EC2</span>
+            <span class="stag stag-gold">Pytest</span>
+            <span class="stag stag-gold">Postman</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal reveal-delay-4">
+          <div class="sc-icon">📊</div>
+          <div class="sc-title">Data &amp; Analytics</div>
+          <div class="skill-tags">
+            <span class="stag stag-purple">Pandas</span>
+            <span class="stag stag-purple">NumPy</span>
+            <span class="stag stag-purple">Data Pipelines</span>
+            <span class="stag stag-purple">BeautifulSoup</span>
+            <span class="stag stag-purple">Scrapy</span>
+            <span class="stag stag-purple">Matplotlib</span>
+            <span class="stag stag-purple">Apache Airflow</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       PROJECTS
+  ═══════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="projects-header">
+        <div class="reveal">
+          <div class="section-label">Featured Projects</div>
+          <h2 class="section-title">What I've <span>built</span></h2>
+        </div>
+        <div class="filter-tabs reveal">
+          <button class="filter-tab active" data-filter="all"  aria-pressed="true">All</button>
+          <button class="filter-tab"        data-filter="api"  aria-pressed="false">APIs</button>
+          <button class="filter-tab"        data-filter="data" aria-pressed="false">Data</button>
+          <button class="filter-tab"        data-filter="auth" aria-pressed="false">Auth</button>
+        </div>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal" data-category="auth api">
+          <div class="pc-accent-bar"></div>
+          <div class="pc-body">
+            <div class="pc-header">
+              <div class="pc-emoji">🔐</div>
+              <div class="pc-links">
+                <a href="https://github.com/ishfaqdar" class="pc-link" target="_blank" rel="noopener" title="GitHub">⌥</a>
+                <a href="#" class="pc-link" target="_blank" rel="noopener" title="Live Demo">↗</a>
+              </div>
+            </div>
+            <h3 class="pc-title">Auth &amp; User Management API</h3>
+            <p class="pc-problem">Secure, scalable authentication system with role-based access control for multi-tenant SaaS applications. Handles 10k+ concurrent sessions reliably.</p>
+            <div class="pc-features">
+              <div class="pc-feature">JWT + Refresh token rotation with Redis blacklist</div>
+              <div class="pc-feature">OAuth2 social login (Google, GitHub)</div>
+              <div class="pc-feature">RBAC with fine-grained permission scopes</div>
+              <div class="pc-feature">Rate limiting &amp; brute-force protection</div>
+            </div>
+            <div class="pc-arch"><strong>Architecture:</strong> FastAPI → PostgreSQL + Redis → async SQLAlchemy, Docker + Nginx</div>
+            <div class="pc-tags">
+              <span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span>
+              <span class="ptag">Redis</span><span class="ptag">JWT</span><span class="ptag">Docker</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1" data-category="api">
+          <div class="pc-accent-bar green"></div>
+          <div class="pc-body">
+            <div class="pc-header">
+              <div class="pc-emoji">✅</div>
+              <div class="pc-links">
+                <a href="https://github.com/ishfaqdar" class="pc-link" target="_blank" rel="noopener" title="GitHub">⌥</a>
+                <a href="#" class="pc-link" target="_blank" rel="noopener" title="Live Demo">↗</a>
+              </div>
+            </div>
+            <h3 class="pc-title">Task Management REST API</h3>
+            <p class="pc-problem">Full-featured project and task management backend supporting real-time updates, team collaboration, and Kanban-style workflows via REST.</p>
+            <div class="pc-features">
+              <div class="pc-feature">Real-time WebSocket task updates via Celery</div>
+              <div class="pc-feature">Full CRUD with pagination &amp; search filtering</div>
+              <div class="pc-feature">File attachments with S3 / MinIO storage</div>
+              <div class="pc-feature">Automated email reminders via background tasks</div>
+            </div>
+            <div class="pc-arch"><strong>Architecture:</strong> Flask + SQLAlchemy → MySQL + Celery + RabbitMQ. 92% test coverage</div>
+            <div class="pc-tags">
+              <span class="ptag green">Flask</span><span class="ptag green">MySQL</span>
+              <span class="ptag green">Celery</span><span class="ptag green">Pytest</span><span class="ptag green">S3</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-2" data-category="api">
+          <div class="pc-accent-bar gold"></div>
+          <div class="pc-body">
+            <div class="pc-header">
+              <div class="pc-emoji">📝</div>
+              <div class="pc-links">
+                <a href="https://github.com/ishfaqdar" class="pc-link" target="_blank" rel="noopener" title="GitHub">⌥</a>
+                <a href="#" class="pc-link" target="_blank" rel="noopener" title="Live Demo">↗</a>
+              </div>
+            </div>
+            <h3 class="pc-title">Blog Backend System</h3>
+            <p class="pc-problem">Headless CMS-style blog backend with rich content management, full-text search, tagging, and a public API consumed by a React frontend.</p>
+            <div class="pc-features">
+              <div class="pc-feature">Full-text search with PostgreSQL tsvector indexes</div>
+              <div class="pc-feature">Nested comments with threaded replies</div>
+              <div class="pc-feature">Draft / publish workflow with version history</div>
+              <div class="pc-feature">SEO metadata API with Open Graph support</div>
+            </div>
+            <div class="pc-arch"><strong>Architecture:</strong> FastAPI + PostgreSQL + Alembic → Redis cache → Nginx. ~40ms avg response</div>
+            <div class="pc-tags">
+              <span class="ptag gold">FastAPI</span><span class="ptag gold">PostgreSQL</span>
+              <span class="ptag gold">Alembic</span><span class="ptag gold">Redis</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="data">
+          <div class="pc-accent-bar purple"></div>
+          <div class="pc-body">
+            <div class="pc-header">
+              <div class="pc-emoji">📊</div>
+              <div class="pc-links">
+                <a href="https://github.com/ishfaqdar" class="pc-link" target="_blank" rel="noopener" title="GitHub">⌥</a>
+                <a href="#" class="pc-link" target="_blank" rel="noopener" title="Live Demo">↗</a>
+              </div>
+            </div>
+            <h3 class="pc-title">Data Analytics Dashboard Backend</h3>
+            <p class="pc-problem">High-throughput data ingestion and analytics API processing 500k+ events/day, powering a real-time BI dashboard with custom KPIs.</p>
+            <div class="pc-features">
+              <div class="pc-feature">ETL pipeline with Pandas + NumPy for batch processing</div>
+              <div class="pc-feature">Aggregated reporting with parameterized time windows</div>
+              <div class="pc-feature">CSV / Excel export with streamed responses</div>
+              <div class="pc-feature">Webhook ingestion with queue-based processing</div>
+            </div>
+            <div class="pc-arch"><strong>Architecture:</strong> FastAPI → PostgreSQL + TimescaleDB → Redis → Celery ETL workers</div>
+            <div class="pc-tags">
+              <span class="ptag purple">FastAPI</span><span class="ptag purple">Pandas</span>
+              <span class="ptag purple">TimescaleDB</span><span class="ptag purple">Celery</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal-delay-1" data-category="data">
+          <div class="pc-accent-bar"></div>
+          <div class="pc-body">
+            <div class="pc-header">
+              <div class="pc-emoji">🕷</div>
+              <div class="pc-links">
+                <a href="https://github.com/ishfaqdar" class="pc-link" target="_blank" rel="noopener" title="GitHub">⌥</a>
+                <a href="#" class="pc-link" target="_blank" rel="noopener" title="Live Demo">↗</a>
+              </div>
+            </div>
+            <h3 class="pc-title">Web Scraping Automation Tool</h3>
+            <p class="pc-problem">Distributed web scraping system targeting 50+ sources with automatic retries, proxy rotation, deduplication, and a REST control API.</p>
+            <div class="pc-features">
+              <div class="pc-feature">Scrapy spiders with rotating proxy middleware</div>
+              <div class="pc-feature">MongoDB for flexible scraped document storage</div>
+              <div class="pc-feature">Scheduled runs via APScheduler + REST triggers</div>
+              <div class="pc-feature">Deduplication fingerprinting with Bloom filters</div>
+            </div>
+            <div class="pc-arch"><strong>Architecture:</strong> Scrapy + aiohttp → MongoDB → FastAPI control plane → Docker Compose workers</div>
+            <div class="pc-tags">
+              <span class="ptag">Scrapy</span><span class="ptag">MongoDB</span>
+              <span class="ptag">aiohttp</span><span class="ptag">FastAPI</span><span class="ptag">Docker</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       GITHUB
+  ═══════════════════════════════════ -->
+  <section id="github">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">GitHub Activity</div>
+        <h2 class="section-title">Code &amp; <span>Contributions</span></h2>
+        <p class="section-subtitle">Open source work and coding activity over the past year.</p>
+      </div>
+      <div class="github-grid">
+        <div>
+          <div class="github-stats reveal">
+            <div class="gstat-card"><div class="gstat-num">42</div><div class="gstat-label">Repositories</div></div>
+            <div class="gstat-card"><div class="gstat-num">1.2k</div><div class="gstat-label">Contributions</div></div>
+            <div class="gstat-card"><div class="gstat-num">890</div><div class="gstat-label">Total Stars</div></div>
+            <div class="gstat-card"><div class="gstat-num">38</div><div class="gstat-label">PRs Merged</div></div>
+          </div>
+          <div class="contrib-section reveal">
+            <div class="contrib-title">Contribution Activity — Last 12 Months</div>
+            <div class="contrib-grid" id="contribGrid"></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div class="repo-item">
+            <div>
+              <a href="https://github.com/ishfaqdar" class="repo-name" target="_blank" rel="noopener">⚙ fastapi-auth-boilerplate</a>
+              <div class="repo-desc">Production-ready FastAPI auth system with JWT, RBAC, and Redis session management</div>
+              <div class="pc-tags" style="margin-top:0.5rem;"><span class="ptag">Python</span><span class="ptag">FastAPI</span></div>
+            </div>
+            <div class="repo-meta"><span class="repo-stat"><span class="repo-star">★</span> 234</span><span class="repo-stat">🍴 56</span></div>
+          </div>
+          <div class="repo-item">
+            <div>
+              <a href="https://github.com/ishfaqdar" class="repo-name" target="_blank" rel="noopener">📊 py-data-pipeline</a>
+              <div class="repo-desc">Modular ETL pipeline framework using Pandas, with pluggable source/sink connectors</div>
+              <div class="pc-tags" style="margin-top:0.5rem;"><span class="ptag green">Python</span><span class="ptag green">Pandas</span></div>
+            </div>
+            <div class="repo-meta"><span class="repo-stat"><span class="repo-star">★</span> 187</span><span class="repo-stat">🍴 41</span></div>
+          </div>
+          <div class="repo-item">
+            <div>
+              <a href="https://github.com/ishfaqdar" class="repo-name" target="_blank" rel="noopener">🕷 distributed-scraper</a>
+              <div class="repo-desc">Scalable Scrapy-based distributed web scraping framework with job scheduling</div>
+              <div class="pc-tags" style="margin-top:0.5rem;"><span class="ptag purple">Python</span><span class="ptag purple">Scrapy</span></div>
+            </div>
+            <div class="repo-meta"><span class="repo-stat"><span class="repo-star">★</span> 143</span><span class="repo-stat">🍴 29</span></div>
+          </div>
+          <div class="repo-item">
+            <div>
+              <a href="https://github.com/ishfaqdar" class="repo-name" target="_blank" rel="noopener">🗃 flask-rest-starter</a>
+              <div class="repo-desc">Minimal Flask REST template with blueprints, SQLAlchemy, and Docker</div>
+              <div class="pc-tags" style="margin-top:0.5rem;"><span class="ptag gold">Python</span><span class="ptag gold">Flask</span></div>
+            </div>
+            <div class="repo-meta"><span class="repo-stat"><span class="repo-star">★</span> 98</span><span class="repo-stat">🍴 23</span></div>
+          </div>
+          <div style="margin-top:1.5rem;text-align:center;">
+            <a href="https://github.com/ishfaqdar" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">View All Repositories ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Background</div>
+        <h2 class="section-title">Experience &amp; <span>Education</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-dot active"></div>
+          <div class="tl-type">Work Experience <span class="tl-date">2023 – Present</span></div>
+          <h3 class="tl-title">Backend Developer — Freelance</h3>
+          <div class="tl-org">Self-Employed · Remote</div>
+          <p class="tl-desc">Designing and building backend systems for 5+ clients — REST APIs, data pipelines, and automation tools. Zero critical production bugs. Clients include SaaS startups and e-commerce platforms.</p>
+          <div class="tl-tags"><span class="ptag">FastAPI</span><span class="ptag">PostgreSQL</span><span class="ptag">Docker</span><span class="ptag">AWS</span></div>
+        </div>
+
+        <div class="tl-item reveal reveal-delay-1">
+          <div class="tl-dot"></div>
+          <div class="tl-type">Internship <span class="tl-date">Jun – Dec 2022</span></div>
+          <h3 class="tl-title">Python Backend Intern</h3>
+          <div class="tl-org">TechWave Solutions · Lagos</div>
+          <p class="tl-desc">Contributed to a microservices e-commerce platform. Built the product catalog API, optimized PostgreSQL queries by 40%, and achieved 88% test coverage with Pytest.</p>
+          <div class="tl-tags"><span class="ptag green">Flask</span><span class="ptag green">MySQL</span><span class="ptag green">REST API</span><span class="ptag green">Pytest</span></div>
+        </div>
+
+        <div class="tl-item reveal reveal-delay-2">
+          <div class="tl-dot"></div>
+          <div class="tl-type">Certification <span class="tl-date">2023</span></div>
+          <h3 class="tl-title">AWS Certified Cloud Practitioner</h3>
+          <div class="tl-org">Amazon Web Services</div>
+          <p class="tl-desc">Validated cloud knowledge across AWS services, security, pricing, and deployment patterns. Applied on EC2, S3, and RDS in production projects.</p>
+          <div class="tl-tags"><span class="ptag gold">AWS</span><span class="ptag gold">Cloud</span><span class="ptag gold">Infrastructure</span></div>
+        </div>
+
+        <div class="tl-item reveal reveal-delay-3">
+          <div class="tl-dot"></div>
+          <div class="tl-type">Education <span class="tl-date">2023 – 2025</span></div>
+          <h3 class="tl-title">M.Sc. Computer Science </h3>
+          <div class="tl-org">Islamic University of Science and Technology Awantipora</div>
+          <p class="tl-desc">Specialized in software engineering and distributed systems. Final project: "Scalable Event-Driven Architecture for Real-Time IoT Data Processing" — built with Python, Kafka, and FastAPI.</p>
+          <div class="tl-tags"><span class="ptag purple">Algorithms</span><span class="ptag purple">Systems Design</span><span class="ptag purple">Distributed Systems</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Get In Touch</div>
+        <h2 class="section-title">Let's <span>work together</span></h2>
+        <p class="section-subtitle">Open to backend engineering roles, API consulting, and freelance projects.</p>
+      </div>
+      <div class="contact-grid">
+
+        <div class="reveal">
+          <p class="contact-avail">
+            I'm currently <strong style="color:var(--green)">available</strong> for new opportunities.
+            Whether you're building a startup's backend from scratch or need an experienced developer
+            to join your team — I'd love to chat.
+          </p>
+          <div class="contact-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=moeedkamraan1125@email.com" 
+   class="contact-link" 
+   target="_blank">
+    <div class="cl-icon">✉</div>
+    <div>
+        <div class="cl-label">Email</div>
+        <div class="cl-value">moeedkamraan1125@email.com</div>
+    </div>
+</a>
+            <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" class="contact-link" target="_blank" rel="noopener">
+              <div class="cl-icon">🔗</div>
+              <div><div class="cl-label">LinkedIn</div><div class="cl-value">linkedin.com/in/ishfaq-dar-8ab7563a3/</div></div>
+            </a>
+            <a href="https://github.com/Dar-Ishfaq-Backend" class="contact-link" target="_blank" rel="noopener">
+              <div class="cl-icon">⌥</div>
+              <div><div class="cl-label">GitHub</div><div class="cl-value">github.com/Dar-Ishfaq-Backend</div></div>
+            </a>
+            <a href="https://wa.me/919103549500" class="contact-link" target="_blank" rel="noopener">
+              <div class="cl-icon green">💬</div>
+              <div><div class="cl-label">WhatsApp</div><div class="cl-value">+91 9103549500</div></div>
+            </a>
+          </div>
+        </div>
+
+            <div class="reveal reveal-delay-2">
+      <form id="contactForm" action="https://formspree.io/f/xbdzlegd" method="POST" novalidate>
+        <input type="hidden" name="_replyto" value="moeedkamraan1125@gmail.com">
+        <input type="hidden" name="_subject" value="New message from Portfolio!">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">Your Name</label>
+            <input type="text" id="fname" name="name" class="form-input" placeholder="John Smith" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="femail">Email</label>
+            <input type="email" id="femail" name="email" class="form-input" placeholder="john@company.com" required />
+          </div>
+        </div>
+            <div class="form-group">
+              <label class="form-label" for="fsubject">Subject</label>
+              <input type="text" id="fsubject" name="subject" class="form-input" placeholder="Backend role at Acme Corp" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="fmessage">Message</label>
+              <textarea id="fmessage" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity…" required></textarea>
+            </div>
+            <button type="submit" id="formSubmitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">
+              Send Message ↗
+            </button>
+            <div class="form-success" id="formSuccess"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-left">
+          Built by <strong>Ishfaq Dar</strong> &nbsp;·&nbsp; Python Backend Developer &nbsp;·&nbsp; <span id="footerYear"></span>
+        </div>
+        <nav class="footer-links">
+          <a href="#about"      class="footer-link">About</a>
+          <a href="#projects"   class="footer-link">Projects</a>
+          <a href="#experience" class="footer-link">Experience</a>
+          <a href="assets/resume.pdf" class="footer-link" download>Resume ↓</a>
+          <a href="#contact"    class="footer-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+  <!-- ✅ Script — relative path -->
+  <script src="script.js"></script>
+
+</body>
+</html>
