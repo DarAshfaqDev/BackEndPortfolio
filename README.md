@@ -10,7 +10,8 @@
 
 ## 🔗 Live Demo
 
-**[ishfaqdar.github.io](https://dar-ishfaq-backend.github.io/MyPortfolioWebSite/)** — deployed on GitHub Pages
+**[ishfaqdar.github.io](https://darashfaqdev.github.io/MyPortfolioWebSite/)** — deployed on GitHub Pages
+
 
 ---
 
