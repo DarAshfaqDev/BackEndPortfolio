@@ -100,7 +100,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Ishfaq Dar** — Python Backend Developer
 
-- 🌐 Portfolio: [ishfaqdar.github.io](https://dar-ishfaq-backend.github.io/MyPortfolioWebSite/)
+- 🌐 Portfolio: [ishfaqdar.github.io](https://darashfaqdev.github.io/MyPortfolioWebSite/)
 - 💼 LinkedIn: [linkedin.com/in/ishfaq-dar-8ab7563a3](https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/)
 - 🐙 GitHub: [github.com/Dar-Ishfaq-Backend](https://github.com/Dar-Ishfaq-Backend)
 - 📧 Email: [moeedkamraan1125@gmail.com](mailto:moeedkamraan1125@gmail.com)
