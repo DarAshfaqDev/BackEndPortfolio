@@ -55,6 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', handleNavScroll, { passive: true });
   handleNavScroll();
 
+  const yearEl = document.getElementById('footerYear');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
   const backToTopBtn = document.querySelector('.back-to-top');
   if (backToTopBtn) {
     backToTopBtn.addEventListener('click', (e) => {
@@ -65,6 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typeof gsap !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger);
+
+    const heroPortrait = document.querySelector('.hero-portrait-container');
+    const heroText = document.querySelector('.hero-main-text');
+    if (heroPortrait) {
+      gsap.fromTo(heroPortrait,
+        { x: -60, opacity: 0, scale: 0.9 },
+        { x: 0, opacity: 1, scale: 1, duration: 1.2, ease: 'power3.out' }
+      );
+    }
+    if (heroText) {
+      gsap.fromTo(heroText,
+        { x: 60, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1.2, delay: 0.2, ease: 'power3.out' }
+      );
+    }
 
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
