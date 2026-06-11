@@ -1,3 +1,27 @@
+// Scroll progress bar
+const scrollProgress = document.createElement('div');
+scrollProgress.className = 'scroll-progress';
+document.body.prepend(scrollProgress);
+
+const style = document.createElement('style');
+style.textContent = `
+  .scroll-progress {
+    position: fixed; top: 0; left: 0;
+    width: 0; height: 3px;
+    background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 50%, #ec4899 100%);
+    z-index: 1001;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+  }
+`;
+document.head.appendChild(style);
+
+window.addEventListener('scroll', () => {
+  const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  scrollProgress.style.width = (winScroll / height) * 100 + '%';
+}, { passive: true });
+
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');

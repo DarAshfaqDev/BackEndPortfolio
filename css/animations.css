@@ -22,3 +22,13 @@
 
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-pulse { animation: neonPulse 3s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-portrait-container::before,
+  .hero-portrait-container::after { display: none; }
+}

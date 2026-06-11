@@ -12,7 +12,8 @@
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content="Ishfaq Dar | Python Backend Developer" />
   <meta property="twitter:description" content="Building scalable APIs and reliable backend systems." />
-  <link rel="icon" type="image/png" href="img/plogo.png" />
+  <link rel="icon" type="image/svg+xml" href="img/plogo.svg" />
+  <link rel="alternate icon" href="img/plogo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/variables.css" />
@@ -20,371 +21,8 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/navigation.css" />
   <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/responsive-overrides.css" />
-  <style>
-    .modern-hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 120px 8% 60px;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero-bg-overlay {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 50% at 70% 40%, rgb(0 242 255 / 5%) 0%, transparent 65%),
-                  radial-gradient(ellipse 40% 40% at 20% 60%, rgb(189 0 255 / 4%) 0%, transparent 60%);
-      z-index: 0;
-    }
-    .hero-grid-pattern {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgb(255 255 255 / 2%) 1px, transparent 1px),
-                        linear-gradient(90deg, rgb(255 255 255 / 2%) 1px, transparent 1px);
-      background-size: 48px 48px;
-      z-index: 0;
-    }
-    .hero-watermark-layer {
-      position: absolute;
-      font-family: Outfit, sans-serif;
-      font-size: clamp(5rem, 20vw, 15rem);
-      font-weight: 900;
-      color: rgb(255 255 255 / 2%);
-      z-index: 0;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      letter-spacing: 0.05em;
-      white-space: nowrap;
-    }
-    .hero-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 4rem;
-      position: relative;
-      z-index: 2;
-      max-width: 1100px;
-      margin: 0 auto;
-      width: 100%;
-    }
-    .hero-portrait-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      height: 45vh;
-      width: 100%;
-    }
-    .hero-portrait-container::before {
-      content: '';
-      position: absolute;
-      top: 15%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120%;
-      height: 80%;
-      background: radial-gradient(circle, rgb(0 242 255 / 15%) 0%, transparent 70%);
-      z-index: 0;
-      pointer-events: none;
-    }
-    .hero-portrait-container::after {
-      content: '';
-      position: absolute;
-      inset: 5% 10% 0;
-      border: 1px solid rgb(0 242 255 / 10%);
-      border-top: 2px solid rgb(0 242 255 / 40%);
-      border-radius: 40px 40px 0 0;
-      mask-image: linear-gradient(to bottom, black 50%, transparent);
-      z-index: 1;
-      pointer-events: none;
-      box-shadow: 0 -10px 30px rgb(0 242 255 / 10%);
-    }
-    .hero-portrait {
-      height: 100%;
-      width: auto;
-      object-fit: cover;
-      filter: contrast(1.05) brightness(1.05) drop-shadow(0 0 20px rgb(0 242 255 / 20%));
-      z-index: 5;
-      position: relative;
-    }
-    .hero-socials {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -20px;
-      display: flex;
-      flex-direction: row;
-      gap: 1rem;
-      z-index: 15;
-    }
-    .hero-socials .social-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: rgb(255 255 255 / 5%);
-      color: #fff;
-      border: 1px solid rgb(255 255 255 / 10%);
-      transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-      text-decoration: none;
-      font-size: 1.1rem;
-      backdrop-filter: blur(10px);
-    }
-    .hero-socials .social-icon:hover {
-      background: var(--accent-cyan);
-      color: #000;
-      transform: translateX(5px) rotate(10deg);
-      box-shadow: 0 0 20px rgb(0 242 255 / 40%);
-    }
-    .hero-main-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      background: rgb(0 242 255 / 7%);
-      border: 1px solid rgb(0 242 255 / 22%);
-      padding: 0.4rem 1rem 0.4rem 0.75rem;
-      border-radius: 100px;
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent-cyan);
-      margin-bottom: 2rem;
-    }
-    .badge-dot {
-      width: 6px; height: 6px;
-      background: var(--accent-cyan);
-      border-radius: 50%;
-      animation: neonPulse 2.5s ease-in-out infinite;
-    }
-    .hero-title {
-      font-family: Outfit, sans-serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1;
-      margin-bottom: 0.5rem;
-    }
-    .hero-title .gradient-text {
-      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-tagline {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      max-width: 500px;
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .cinema-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 14px 32px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    .cinema-btn.primary {
-      background: var(--accent-cyan);
-      color: #050505;
-    }
-    .cinema-btn.primary:hover {
-      box-shadow: 0 0 30px rgb(0 242 255 / 30%);
-      transform: translateY(-2px);
-    }
-    .cinema-btn.secondary {
-      background: transparent;
-      color: var(--text-main);
-      border: 1px solid rgb(255 255 255 / 15%);
-    }
-    .cinema-btn.secondary:hover {
-      border-color: var(--accent-cyan);
-      color: var(--accent-cyan);
-      transform: translateY(-2px);
-    }
-    .authority-bar {
-      display: flex;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 4rem;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 2;
-    }
-    .stat-item {
-      text-align: center;
-    }
-    .stat-number {
-      display: block;
-      font-family: Outfit, sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fff;
-    }
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .stat-separator {
-      width: 1px;
-      background: rgb(255 255 255 / 8%);
-    }
-    @media (width >= 1024px) {
-      .hero-portrait-container { height: min(80vh, 600px); }
-      .hero-socials { left: 0; transform: none; bottom: 15%; flex-direction: column; gap: 1.5rem; }
-    }
-    @media (max-width: 1023px) {
-      .hero-content { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
-      .hero-main-text { align-items: center; text-align: center; }
-      .hero-actions { justify-content: center; }
-      .hero-tagline { max-width: 100%; }
-    }
-    @media (max-width: 768px) {
-      .authority-bar { gap: 1.5rem; }
-      .stat-separator { display: none; }
-    }
-
-    .projects-section, .skills-section, .about-section {
-      padding: 6rem 8%;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-    .section-header {
-      margin-bottom: 4rem;
-      text-align: center;
-    }
-    .section-header h2 {
-      font-family: Outfit, sans-serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 800;
-      margin-bottom: 1rem;
-    }
-    .section-header h2 span {
-      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .section-header p {
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .skill-card {
-      background: rgb(255 255 255 / 3%);
-      border: 1px solid rgb(255 255 255 / 8%);
-      border-radius: 16px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-    }
-    .skill-card:hover {
-      background: rgb(255 255 255 / 5%);
-      border-color: var(--accent-cyan);
-      transform: translateY(-4px);
-    }
-    .skill-card .icon { font-size: 1.5rem; margin-bottom: 1rem; color: var(--accent-cyan); }
-    .skill-card h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #fff; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-tag {
-      padding: 0.3rem 0.7rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      border: 1px solid rgb(255 255 255 / 10%);
-      color: var(--text-muted);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: rgb(255 255 255 / 3%);
-      border: 1px solid rgb(255 255 255 / 8%);
-      border-radius: 16px;
-      padding: 2rem;
-      transition: all 0.3s ease;
-    }
-    .project-card:hover {
-      background: rgb(255 255 255 / 5%);
-      border-color: var(--accent-cyan);
-      transform: translateY(-4px);
-    }
-    .project-card .emoji { font-size: 1.5rem; margin-bottom: 1rem; }
-    .project-card h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
-    .project-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
-    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    .overview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 8% 6rem;
-      position: relative;
-      z-index: 2;
-    }
-    .overview-card {
-      background: rgb(255 255 255 / 3%);
-      border: 1px solid rgb(255 255 255 / 8%);
-      border-radius: 16px;
-      padding: 2rem;
-      text-align: center;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .overview-card:hover {
-      background: rgb(255 255 255 / 5%);
-      border-color: var(--accent-cyan);
-      transform: translateY(-4px);
-    }
-    .overview-card .icon-bg {
-      width: 48px; height: 48px;
-      margin: 0 auto 1rem;
-      background: rgb(0 242 255 / 8%);
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--accent-cyan);
-    }
-    .overview-card h3 { color: #fff; font-size: 1rem; margin-bottom: 0.5rem; }
-    .overview-card p { color: var(--text-muted); font-size: 0.8rem; line-height: 1.5; }
-
-    .overview-title {
-      font-family: Outfit, sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #fff;
-    }
-  </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script defer src="js/generative-bg.js"></script>
@@ -420,7 +58,10 @@
 
     <div class="hero-content">
       <div class="hero-portrait-container">
-        <img src="img/imge.png" alt="Ishfaq Dar" class="hero-portrait">
+                <picture>
+          <source srcset="img/imge.webp" type="image/webp">
+          <img src="img/imge.png" alt="Ishfaq Dar" class="hero-portrait" loading="lazy">
+        </picture>
         <div class="hero-socials">
           <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
           <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
@@ -434,12 +75,12 @@
           Available for Backend Roles
         </div>
         <h1 class="hero-title">
-          <span>Python Backend</span><br>
-          <span class="gradient-text">Developer</span>
+          <span>Building Systems</span><br>
+          <span class="gradient-text">That Scale</span>
         </h1>
         <p class="hero-tagline">
-          Building scalable APIs, reliable backend systems, and high-performance
-          data pipelines. I turn complex problems into elegant, production-ready solutions.
+          Designing and building production-grade APIs, data pipelines, and microservices.
+          I turn backend architecture into reliable, tested, and scalable systems.
         </p>
         <div class="hero-actions">
           <a href="projects.html" class="cinema-btn primary">
@@ -469,8 +110,8 @@
       </div>
       <div class="stat-separator"></div>
       <div class="stat-item">
-        <span class="stat-number">3.5k+</span>
-        <span class="stat-label">Lines of Python</span>
+        <span class="stat-number">99%</span>
+        <span class="stat-label">API Uptime</span>
       </div>
     </div>
   </header>
@@ -545,6 +186,10 @@
       <div class="project-card">
         <div class="emoji">🔐</div>
         <h3>Auth & User Management API</h3>
+        <div class="project-meta">
+          <span class="project-arch">3-Tier REST API</span>
+          <span class="project-metric">⚡ ~40ms avg response</span>
+        </div>
         <p>Secure, scalable authentication system with JWT, OAuth2, RBAC, and Redis session management for multi-tenant SaaS applications.</p>
         <div class="project-tags">
           <span class="skill-tag">FastAPI</span>
@@ -553,10 +198,18 @@
           <span class="skill-tag">JWT</span>
           <span class="skill-tag">Docker</span>
         </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="project-link"><i class="fab fa-github"></i> Source</a>
+          <a href="projects.html#auth" class="project-link"><i class="fas fa-arrow-right"></i> Details</a>
+        </div>
       </div>
       <div class="project-card">
         <div class="emoji">✅</div>
         <h3>Task Management REST API</h3>
+        <div class="project-meta">
+          <span class="project-arch">Event-Driven</span>
+          <span class="project-metric">✅ 92% test coverage</span>
+        </div>
         <p>Full-featured project and task management backend with real-time WebSocket updates, Celery background tasks, and Kanban workflows.</p>
         <div class="project-tags">
           <span class="skill-tag">Flask</span>
@@ -565,10 +218,18 @@
           <span class="skill-tag">Pytest</span>
           <span class="skill-tag">S3</span>
         </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="project-link"><i class="fab fa-github"></i> Source</a>
+          <a href="projects.html#task" class="project-link"><i class="fas fa-arrow-right"></i> Details</a>
+        </div>
       </div>
       <div class="project-card">
         <div class="emoji">📝</div>
         <h3>Blog Backend System</h3>
+        <div class="project-meta">
+          <span class="project-arch">Headless CMS</span>
+          <span class="project-metric">⚡ ~40ms avg response</span>
+        </div>
         <p>Headless CMS with full-text search (PostgreSQL tsvector), nested comments, draft/publish workflow, and SEO metadata API.</p>
         <div class="project-tags">
           <span class="skill-tag">FastAPI</span>
@@ -576,10 +237,18 @@
           <span class="skill-tag">Alembic</span>
           <span class="skill-tag">Redis</span>
         </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="project-link"><i class="fab fa-github"></i> Source</a>
+          <a href="projects.html#blog" class="project-link"><i class="fas fa-arrow-right"></i> Details</a>
+        </div>
       </div>
       <div class="project-card">
         <div class="emoji">📊</div>
         <h3>Data Analytics Dashboard Backend</h3>
+        <div class="project-meta">
+          <span class="project-arch">ETL Pipeline</span>
+          <span class="project-metric">📈 500k+ events/day</span>
+        </div>
         <p>High-throughput data ingestion pipeline processing 500k+ events/day, powering real-time BI dashboards with custom KPIs.</p>
         <div class="project-tags">
           <span class="skill-tag">FastAPI</span>
@@ -587,10 +256,18 @@
           <span class="skill-tag">TimescaleDB</span>
           <span class="skill-tag">Celery</span>
         </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="project-link"><i class="fab fa-github"></i> Source</a>
+          <a href="projects.html#analytics" class="project-link"><i class="fas fa-arrow-right"></i> Details</a>
+        </div>
       </div>
       <div class="project-card">
         <div class="emoji">🕷</div>
         <h3>Web Scraping Automation Tool</h3>
+        <div class="project-meta">
+          <span class="project-arch">Distributed System</span>
+          <span class="project-metric">🔁 50+ sources</span>
+        </div>
         <p>Distributed scraping system targeting 50+ sources with proxy rotation, deduplication via Bloom filters, and REST control API.</p>
         <div class="project-tags">
           <span class="skill-tag">Scrapy</span>
@@ -598,6 +275,10 @@
           <span class="skill-tag">aiohttp</span>
           <span class="skill-tag">FastAPI</span>
           <span class="skill-tag">Docker</span>
+        </div>
+        <div class="project-links-row">
+          <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="project-link"><i class="fab fa-github"></i> Source</a>
+          <a href="projects.html#scraping" class="project-link"><i class="fas fa-arrow-right"></i> Details</a>
         </div>
       </div>
     </div>
@@ -648,14 +329,14 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
               <span>Back to Top</span>
             </a>
-            <div class="social-links11">
-              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link11">
+            <div class="social-links">
+              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
-              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link11">
+              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
-              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link11">
+              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </a>
             </div>

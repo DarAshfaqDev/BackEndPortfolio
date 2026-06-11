@@ -6,7 +6,8 @@
   <title>About | Ishfaq Dar</title>
   <meta name="description" content="Learn more about Ishfaq Dar — Python Backend Developer." />
   <meta name="author" content="Ishfaq Dar" />
-  <link rel="icon" type="image/png" href="img/plogo.png" />
+  <link rel="icon" type="image/svg+xml" href="img/plogo.svg" />
+  <link rel="alternate icon" href="img/plogo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/variables.css" />
@@ -49,10 +50,8 @@
       z-index: 2;
     }
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
+      max-width: 800px;
+      margin: 0 auto;
     }
     .about-text p {
       color: var(--text-muted);
@@ -61,49 +60,6 @@
       font-size: 0.95rem;
     }
     .about-text p strong { color: #fff; }
-    .about-visual {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .avatar-frame {
-      position: relative;
-      width: 300px;
-      height: 300px;
-    }
-    .avatar-ring {
-      position: absolute; inset: 0;
-      border: 1px solid rgb(0 242 255 / 15%);
-      border-radius: 50%;
-      animation: spin 24s linear infinite;
-    }
-    .avatar-ring::before {
-      content: '';
-      position: absolute;
-      width: 7px; height: 7px;
-      background: var(--accent-cyan);
-      border-radius: 50%;
-      top: -3.5px; left: calc(50% - 3.5px);
-      box-shadow: 0 0 8px var(--accent-cyan);
-    }
-    .avatar-ring-2 {
-      position: absolute; inset: 18px;
-      border: 1px dashed rgb(0 242 255 / 7%);
-      border-radius: 50%;
-      animation: spin 18s linear infinite reverse;
-    }
-    .avatar-inner {
-      position: absolute; inset: 36px;
-      background: rgb(255 255 255 / 3%);
-      border: 1px solid rgb(255 255 255 / 8%);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden;
-    }
-    .avatar-inner img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top center;
-    }
     .values-grid {
       display: grid;
       grid-template-columns: repeat(2,1fr);
@@ -126,10 +82,66 @@
     .value-icon { font-size: 1.3rem; margin-bottom: 0.6rem; color: var(--accent-cyan); }
     .value-title { font-size: 0.85rem; font-weight: 600; color: #fff; margin-bottom: 0.35rem; }
     .value-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.65; }
+    .timeline { margin-top: 4rem; }
+    .timeline-title {
+      font-family: Outfit, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .timeline-line {
+      position: relative;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-left: 2rem;
+    }
+    .timeline-line::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-violet));
+    }
+    .tl-item {
+      position: relative;
+      padding: 0 0 2rem 1.5rem;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -1.65rem; top: 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      border: 2px solid #0a0a0a;
+      box-shadow: 0 0 12px rgb(0 242 255 / 30%);
+    }
+    .tl-date {
+      font-size: 0.7rem;
+      color: var(--accent-cyan);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .tl-role {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.15rem;
+    }
+    .tl-company {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .tl-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
     @media (max-width: 768px) {
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .avatar-frame { width: 220px; height: 220px; }
-      .avatar-inner { inset: 28px; }
       .values-grid { grid-template-columns: 1fr; }
       .value-card:nth-child(2n) { border-right: 1px solid rgb(255 255 255 / 8%); }
       .value-card:nth-child(3) { border-bottom: 1px solid rgb(255 255 255 / 8%); }
@@ -199,19 +211,51 @@
         </div>
       </div>
 
-      <div class="about-visual">
-        <div class="avatar-frame">
-          <div class="avatar-ring"></div>
-          <div class="avatar-ring-2"></div>
-          <div class="avatar-inner">
-            <img src="Blue Coat Specs Full.png" alt="Ishfaq Dar">
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
-  <footer class="site-footer">
+  <section class="content-section">
+    <div class="timeline">
+      <h2 class="timeline-title"><span style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet)); background-clip: text; -webkit-text-fill-color: transparent;">Experience</span></h2>
+      <div class="timeline-line">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Jan 2025 — Present</div>
+          <div class="tl-role">Python Backend Developer</div>
+          <div class="tl-company">Freelance / Contract</div>
+          <div class="tl-desc">Building production APIs and backend systems for clients. Delivered task management APIs with Celery, real-time WebSocket dashboards, and headless CMS backends with full-text search.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Jun 2024 — Dec 2024</div>
+          <div class="tl-role">Data Analyst / BI Developer</div>
+          <div class="tl-company">Independent Projects</div>
+          <div class="tl-desc">Built ETL pipelines processing 500k+ events/day. Designed TimescaleDB schemas and developed real-time BI dashboards with custom KPI aggregation and monitoring.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2023 — 2024</div>
+          <div class="tl-role">Backend Engineering Trainee</div>
+          <div class="tl-company">Self-Directed Study</div>
+          <div class="tl-desc">Deep-dived into FastAPI, Flask, PostgreSQL optimization, Docker, CI/CD, and system design. Built 10+ projects covering auth, caching, async processing, and deployment.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline" style="margin-top: 2rem;">
+      <h2 class="timeline-title"><span style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet)); background-clip: text; -webkit-text-fill-color: transparent;">Education</span></h2>
+      <div class="timeline-line">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-date">Graduated 2024</div>
+          <div class="tl-role">Bachelor's in Computer Applications</div>
+          <div class="tl-company">University of Kashmir</div>
+          <div class="tl-desc">Coursework in Data Structures, Algorithms, DBMS, Operating Systems, and Computer Networks. Focused on backend and data-centric projects.</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
     <div class="footer-content">
       <div class="footer-main">
         <div class="footer-left">
@@ -224,14 +268,14 @@
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
               <span>Back to Top</span>
             </a>
-            <div class="social-links11">
-              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link11">
+            <div class="social-links">
+              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
               </a>
-              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link11">
+              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               </a>
-              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link11">
+              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </a>
             </div>
