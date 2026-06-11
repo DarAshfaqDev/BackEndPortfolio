@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills | Ishfaq Dar</title>
+  <meta name="description" content="Technical skills of Ishfaq Dar — Python Backend Developer." />
+  <meta name="author" content="Ishfaq Dar" />
+  <link rel="icon" type="image/png" href="img/plogo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive-overrides.css" />
+  <style>
+    .page-hero {
+      padding: 140px 8% 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-family: Outfit, sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 span {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-hero p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+    .skills-section {
+      padding: 2rem 8% 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      border: 1px solid rgb(255 255 255 / 8%);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .skill-category {
+      padding: 2.5rem;
+      background: rgb(255 255 255 / 3%);
+      transition: background 0.3s ease;
+      position: relative;
+    }
+    .skill-category::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: var(--accent-cyan);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .skill-category:hover { background: rgb(255 255 255 / 5%); }
+    .skill-category:hover::before { opacity: 1; }
+    .sc-icon { font-size: 1.5rem; margin-bottom: 0.6rem; color: var(--accent-cyan); }
+    .sc-title { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 1.25rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      padding: 0.35rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      border: 1px solid rgb(255 255 255 / 12%);
+      color: var(--text-muted);
+      transition: all 0.3s ease;
+    }
+    .skill-tag:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+    @media (max-width: 768px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-category { padding: 1.75rem; }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/generative-bg.js"></script>
+  <script defer src="js/common.js"></script>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="logo">
+      <span class="logo-text">ISHFAQ<span class="logo-accent">||</span>Portfolio</span>
+    </div>
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link active">Skills</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="articles.html" class="nav-link">Articles</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <div class="hamburger"></div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="bg-animation"></div>
+
+  <section class="page-hero">
+    <h1>Technical <span>Skills</span></h1>
+    <p>Tools and technologies I use to build production backend systems.</p>
+  </section>
+
+  <section class="skills-section">
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="sc-icon"><i class="fab fa-python"></i></div>
+        <div class="sc-title">Backend Development</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">GraphQL</span>
+          <span class="skill-tag">WebSockets</span>
+          <span class="skill-tag">Celery</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">JWT / OAuth2</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="sc-icon"><i class="fas fa-database"></i></div>
+        <div class="sc-title">Databases</div>
+        <div class="skill-tags">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Redis</span>
+          <span class="skill-tag">SQLAlchemy</span>
+          <span class="skill-tag">Alembic</span>
+          <span class="skill-tag">SQL Optimization</span>
+          <span class="skill-tag">Indexing</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="sc-icon"><i class="fas fa-tools"></i></div>
+        <div class="sc-title">Tools & DevOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Nginx</span>
+          <span class="skill-tag">GitHub Actions</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">AWS EC2</span>
+          <span class="skill-tag">Pytest</span>
+          <span class="skill-tag">Postman</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <div class="sc-icon"><i class="fas fa-chart-bar"></i></div>
+        <div class="sc-title">Data & Analytics</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Pandas</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Data Pipelines</span>
+          <span class="skill-tag">BeautifulSoup</span>
+          <span class="skill-tag">Scrapy</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Apache Airflow</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-left">
+          <p class="copyright">&copy; 2025 Ishfaq Dar</p>
+          <p class="footer-meta">Python Backend Developer</p>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="#top" class="back-to-top">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+              <span>Back to Top</span>
+            </a>
+            <div class="social-links11">
+              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="made-with">
+        <p>Crafted with <span class="heart-icon">❤️</span> By Ishfaq</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

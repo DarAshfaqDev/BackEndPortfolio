@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Ishfaq Dar</title>
+  <meta name="description" content="Get in touch with Ishfaq Dar — Python Backend Developer." />
+  <meta name="author" content="Ishfaq Dar" />
+  <link rel="icon" type="image/png" href="img/plogo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive-overrides.css" />
+  <style>
+    .page-hero {
+      padding: 140px 8% 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-family: Outfit, sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 span {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+    .contact-section {
+      padding: 2rem 8% 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-avail {
+      color: var(--text-muted);
+      line-height: 1.9;
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 0; }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.9rem 1.1rem;
+      background: rgb(255 255 255 / 3%);
+      border: 1px solid rgb(255 255 255 / 8%);
+      border-bottom: none;
+      text-decoration: none; color: var(--text-main);
+      transition: all 0.3s ease;
+    }
+    .contact-link:first-child { border-radius: 8px 8px 0 0; }
+    .contact-link:last-child { border-bottom: 1px solid rgb(255 255 255 / 8%); border-radius: 0 0 8px 8px; }
+    .contact-link:hover { background: rgb(255 255 255 / 5%); border-color: var(--accent-cyan); z-index: 1; position: relative; }
+    .cl-icon {
+      width: 34px; height: 34px; border-radius: 6px;
+      background: rgb(0 242 255 / 8%); border: 1px solid rgb(0 242 255 / 25%);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; flex-shrink: 0; color: var(--accent-cyan);
+    }
+    .cl-label { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+    .cl-value { font-size: 0.82rem; color: #fff; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-label {
+      display: block; font-size: 0.7rem; color: var(--text-muted);
+      margin-bottom: 0.45rem; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      background: rgb(255 255 255 / 3%);
+      border: 1px solid rgb(255 255 255 / 10%);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      color: #fff;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .form-input:focus, .form-textarea:focus {
+      border-color: var(--accent-cyan);
+      background: rgb(255 255 255 / 5%);
+      box-shadow: 0 0 20px rgb(0 242 255 / 10%);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgb(255 255 255 / 30%); }
+    .form-textarea { min-height: 130px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .submit-btn {
+      width: 100%; padding: 14px 28px;
+      background: var(--accent-cyan); color: #050505;
+      border: none; border-radius: 8px;
+      font-weight: 600; font-size: 0.9rem;
+      cursor: pointer; transition: all 0.3s ease;
+    }
+    .submit-btn:hover { box-shadow: 0 0 30px rgb(0 242 255 / 30%); transform: translateY(-1px); }
+    .form-success {
+      background: rgb(0 242 255 / 8%); border: 1px solid rgb(0 242 255 / 25%);
+      border-radius: 8px; padding: 0.9rem 1rem;
+      text-align: center; color: var(--accent-cyan); font-size: 0.85rem;
+      display: none; margin-top: 0.9rem;
+    }
+    .form-success.visible { display: block; }
+    @media (max-width: 768px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/generative-bg.js"></script>
+  <script defer src="js/common.js"></script>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="logo">
+      <span class="logo-text">ISHFAQ<span class="logo-accent">||</span>Portfolio</span>
+    </div>
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="articles.html" class="nav-link">Articles</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <div class="hamburger"></div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="bg-animation"></div>
+
+  <section class="page-hero">
+    <h1>Get In <span>Touch</span></h1>
+    <p>Open to backend engineering roles, API consulting, and freelance projects.</p>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div>
+        <div class="contact-avail">
+          I'm currently <strong style="color: var(--accent-cyan)">available</strong> for new opportunities.
+          Whether you're building a startup's backend from scratch or need an experienced developer
+          to join your team — I'd love to chat.
+        </div>
+        <div class="contact-links">
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=moeedkamraan1125@gmail.com" target="_blank" class="contact-link">
+            <div class="cl-icon">✉</div>
+            <div>
+              <div class="cl-label">Email</div>
+              <div class="cl-value">moeedkamraan1125@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="contact-link">
+            <div class="cl-icon">🔗</div>
+            <div>
+              <div class="cl-label">LinkedIn</div>
+              <div class="cl-value">linkedin.com/in/ishfaq-dar-8ab7563a3/</div>
+            </div>
+          </a>
+          <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="contact-link">
+            <div class="cl-icon">⌥</div>
+            <div>
+              <div class="cl-label">GitHub</div>
+              <div class="cl-value">github.com/Dar-Ishfaq-Backend</div>
+            </div>
+          </a>
+          <a href="https://wa.me/919103549500" target="_blank" class="contact-link">
+            <div class="cl-icon">💬</div>
+            <div>
+              <div class="cl-label">WhatsApp</div>
+              <div class="cl-value">+91 9103549500</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <form id="contactForm" action="https://formspree.io/f/xbdzlegd" method="POST" novalidate>
+          <input type="hidden" name="_replyto" value="moeedkamraan1125@gmail.com">
+          <input type="hidden" name="_subject" value="New message from Portfolio!">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">Your Name</label>
+              <input type="text" id="fname" name="name" class="form-input" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="femail">Email</label>
+              <input type="email" id="femail" name="email" class="form-input" placeholder="john@company.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fsubject">Subject</label>
+            <input type="text" id="fsubject" name="subject" class="form-input" placeholder="Backend role at Acme Corp" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fmessage">Message</label>
+            <textarea id="fmessage" name="message" class="form-textarea" placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+          <button type="submit" id="formSubmitBtn" class="submit-btn">
+            Send Message <i class="fas fa-arrow-right"></i>
+          </button>
+          <div class="form-success" id="formSuccess"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-left">
+          <p class="copyright">&copy; 2025 Ishfaq Dar</p>
+          <p class="footer-meta">Python Backend Developer</p>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="#top" class="back-to-top">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+              <span>Back to Top</span>
+            </a>
+            <div class="social-links11">
+              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="made-with">
+        <p>Crafted with <span class="heart-icon">❤️</span> By Ishfaq</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      const btn = document.getElementById('formSubmitBtn');
+      const success = document.getElementById('formSuccess');
+
+      if (form && btn) {
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          const name = form.querySelector('[name="name"]')?.value.trim();
+          const email = form.querySelector('[name="email"]')?.value.trim();
+          const message = form.querySelector('[name="message"]')?.value.trim();
+
+          if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            btn.classList.add('shake');
+            setTimeout(() => btn.classList.remove('shake'), 450);
+            return;
+          }
+
+          btn.disabled = true;
+          btn.innerHTML = 'Sending...';
+          setTimeout(() => {
+            btn.innerHTML = '✓ Message Sent!';
+            btn.style.background = '#22d3a4';
+            btn.style.color = '#050505';
+            if (success) {
+              success.textContent = `Thanks ${name}! I'll reply within 24 hours.`;
+              success.classList.add('visible');
+            }
+            form.reset();
+            setTimeout(() => {
+              btn.disabled = false;
+              btn.innerHTML = 'Send Message <i class="fas fa-arrow-right"></i>';
+              btn.style.background = '';
+              btn.style.color = '';
+              if (success) success.classList.remove('visible');
+            }, 4000);
+          }, 1200);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>

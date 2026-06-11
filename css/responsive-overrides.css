@@ -1,0 +1,25 @@
+@media (width >= 48rem) {
+  .overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tools-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .articles-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .channels-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-actions { width: auto; }
+  .slider-btn, .btn-premium-link, .submit-button { width: auto; }
+}
+
+@media (width >= 64rem) {
+  .top-bar { padding: 0 2rem; min-height: 4rem; }
+  .nav-links {
+    position: static; width: auto; height: auto;
+    background: transparent; padding: 0;
+    flex-direction: row; gap: 1rem;
+  }
+  .menu-toggle { display: none; }
+}
+
+@media (width >= 75rem) {
+  .overview-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .projects-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

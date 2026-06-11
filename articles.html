@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles | Ishfaq Dar</title>
+  <meta name="description" content="Read technical articles on Python Backend Development, APIs, System Design, and DevOps by Ishfaq Dar." />
+  <meta name="author" content="Ishfaq Dar" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Articles | Ishfaq Dar" />
+  <meta property="og:description" content="Technical insights into Python Backend Development by Ishfaq Dar." />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Articles | Ishfaq Dar" />
+  <meta property="twitter:description" content="Technical insights into Python Backend Development by Ishfaq Dar." />
+  <link rel="icon" type="image/png" href="img/plogo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/articles.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive-overrides.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/generative-bg.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/articles.js"></script>
+</head>
+<body id="top">
+
+  <div class="top-bar">
+    <div class="logo">
+      <span class="logo-text">ISHFAQ<span class="logo-accent">||</span>Portfolio</span>
+    </div>
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="articles.html" class="nav-link active">Articles</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <div class="hamburger"></div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="bg-animation"></div>
+
+  <main class="hub-content">
+
+    <header class="hub-header section-header-premium">
+      <div class="header-watermark">ARTICLES</div>
+      <h1 class="hub-title-main">
+        <span class="title-part-1">Backend</span>
+        <span class="title-part-2">Engineering</span>
+      </h1>
+      <div class="header-separator-line"></div>
+      <p class="hub-tagline">Deep Dives into Python, APIs & System Design</p>
+    </header>
+
+    <div class="hub-actions-bar">
+      <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" id="article-search" placeholder="Search FastAPI, Docker, caching..." />
+      </div>
+      <div class="filter-pills">
+        <button class="pill active" data-filter="all">All Disciplines</button>
+        <button class="pill" data-filter="api">APIs</button>
+        <button class="pill" data-filter="data">Data</button>
+        <button class="pill" data-filter="auth">Auth</button>
+        <button class="pill" data-filter="devops">DevOps</button>
+      </div>
+    </div>
+
+    <section class="articles-grid" id="articles-container">
+
+      <a href="#" class="article-card" data-category="api">
+        <div class="card-index">01</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-gradient-descent">
+            <div class="v-ring v-ring-1"></div>
+            <div class="v-ring v-ring-2"></div>
+            <div class="v-ring v-ring-3"></div>
+            <div class="v-dot"></div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">APIs</span>
+            <div class="tech-spec">[ FASTAPI // V2.0 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>FastAPI Performance Optimization</h3>
+            <p>Master async patterns, connection pooling, caching strategies, and database optimization to build FastAPI applications that handle 10k+ requests per second.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 12 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="api">
+        <div class="card-index">02</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-lagrange">
+            <div class="v-circle v-circle-1"></div>
+            <div class="v-circle v-circle-2"></div>
+            <div class="v-line"></div>
+            <div class="v-point"></div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">APIs</span>
+            <div class="tech-spec">[ REST // V1.2 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>RESTful API Design Patterns</h3>
+            <p>From resource modeling to hypermedia. Design APIs that are intuitive, consistent, and scalable following REST best practices and HATEOAS principles.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 15 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="auth">
+        <div class="card-index">03</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-bias-variance">
+            <div class="v-target-ring v-target-ring-1"></div>
+            <div class="v-target-ring v-target-ring-2"></div>
+            <div class="v-target-ring v-target-ring-3"></div>
+            <div class="v-point-cluster">
+              <div class="v-point p1"></div>
+              <div class="v-point p2"></div>
+              <div class="v-point p3"></div>
+              <div class="v-point p4"></div>
+            </div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">Auth</span>
+            <div class="tech-spec">[ SECURITY // V2.1 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>JWT & OAuth2 Implementation</h3>
+            <p>Complete guide to implementing secure authentication with JWT access/refresh token rotation, OAuth2 social login, and RBAC permission scopes.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 18 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="data">
+        <div class="card-index">04</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-linear-regression">
+            <div class="v-data-points"></div>
+            <div class="v-reg-line"></div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">Data</span>
+            <div class="tech-spec">[ DATABASES // V1.1 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>PostgreSQL Query Optimization</h3>
+            <p>Master index types, query planning, CTEs, window functions, and connection pooling to achieve sub-10ms query times at scale.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 14 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="devops">
+        <div class="card-index">05</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-logistic-regression">
+            <div class="v-grid"></div>
+            <div class="v-sigmoid-wrapper">
+              <svg viewBox="0 0 200 100" class="v-sigmoid-svg">
+                <path d="M 0 80 C 50 80, 50 20, 100 20 S 150 20, 200 20" fill="none" stroke="currentColor" stroke-width="3" class="v-sigmoid-path" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">DevOps</span>
+            <div class="tech-spec">[ CI/CD // V1.0 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>Docker & CI/CD Pipeline Guide</h3>
+            <p>Build production-ready Docker images, orchestrate multi-container applications, and automate deployment with GitHub Actions CI/CD.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 20 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="auth">
+        <div class="card-index">06</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-neural-networks">
+            <div class="v-grid-nn"></div>
+            <div class="v-network-wrapper">
+              <svg viewBox="0 0 200 100" class="v-network-svg">
+                <line x1="40" y1="30" x2="100" y2="20" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="40" y1="30" x2="100" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="40" y1="30" x2="100" y2="80" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="40" y1="70" x2="100" y2="20" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="40" y1="70" x2="100" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="40" y1="70" x2="100" y2="80" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="100" y1="20" x2="160" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="100" y1="50" x2="160" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <line x1="100" y1="80" x2="160" y2="50" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+                <circle cx="40" cy="30" r="4.5" fill="#fff" />
+                <circle cx="40" cy="70" r="4.5" fill="#fff" />
+                <circle cx="100" cy="20" r="4.5" fill="#fff" />
+                <circle cx="100" cy="50" r="4.5" fill="#fff" />
+                <circle cx="100" cy="80" r="4.5" fill="#fff" />
+                <circle cx="160" cy="50" r="4.5" fill="#fff" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">Auth</span>
+            <div class="tech-spec">[ RBAC // V1.2 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>Role-Based Access Control</h3>
+            <p>Design and implement fine-grained RBAC systems with permission inheritance, dynamic scope resolution, and audit logging for enterprise applications.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 16 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="data">
+        <div class="card-index">07</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-pca">
+            <div class="v-pca-wrapper">
+              <svg viewBox="0 0 200 150" class="v-pca-svg">
+                <ellipse cx="100" cy="75" rx="70" ry="25" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3" transform="rotate(-30 100 75)" />
+                <line x1="30" y1="115" x2="170" y2="35" stroke="currentColor" stroke-width="2.5" class="v-pc1" />
+                <line x1="80" y1="40" x2="120" y2="110" stroke="currentColor" stroke-width="1.5" opacity="0.6" class="v-pc2" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">Data</span>
+            <div class="tech-spec">[ ETL // V1.0 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>ETL Pipeline Architecture</h3>
+            <p>Build robust ETL pipelines with Python — from data extraction via APIs and web scraping to transformation with Pandas and loading into data warehouses.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 18 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="devops">
+        <div class="card-index">08</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-infotheory">
+            <div class="v-infotheory-wrapper">
+              <svg viewBox="0 0 200 150" class="v-infotheory-svg">
+                <line x1="40" y1="120" x2="160" y2="120" stroke="currentColor" stroke-width="1.5" opacity="0.3" />
+                <line x1="40" y1="120" x2="40" y2="30" stroke="currentColor" stroke-width="1.5" opacity="0.3" />
+                <path d="M 40 120 Q 100 0 160 120" fill="none" stroke="currentColor" stroke-width="2.5" class="v-entropy-path" />
+                <circle cx="100" cy="30" r="4" fill="currentColor" class="v-entropy-dot" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">DevOps</span>
+            <div class="tech-spec">[ MONITORING // V1.0 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>Application Monitoring & Observability</h3>
+            <p>Implement comprehensive monitoring with Prometheus metrics, structured logging, distributed tracing, and real-time alerting for production systems.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 15 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="api">
+        <div class="card-index">09</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-svd">
+            <div class="v-svd-wrapper">
+              <svg viewBox="0 0 200 150" class="v-svd-svg">
+                <rect x="20" y="30" width="40" height="90" rx="3" fill="none" stroke="currentColor" stroke-width="1.5" class="v-matrix-a" opacity="0.8" />
+                <text x="40" y="80" text-anchor="middle" font-family="sans-serif" font-size="14" fill="currentColor" opacity="0.8">A</text>
+                <text x="75" y="80" text-anchor="middle" font-family="sans-serif" font-size="14" fill="currentColor" opacity="0.4">=</text>
+                <rect x="90" y="30" width="20" height="90" rx="2" fill="none" stroke="#f02f87" stroke-width="1.5" class="v-matrix-u" opacity="0.8" />
+                <rect x="115" y="45" width="30" height="30" rx="2" fill="none" stroke="#ffc233" stroke-width="1.5" class="v-matrix-s" opacity="0.8" />
+                <line x1="120" y1="50" x2="140" y2="70" stroke="#ffc233" stroke-width="2" opacity="0.8" stroke-dasharray="2 2" />
+                <rect x="150" y="45" width="30" height="20" rx="2" fill="none" stroke="#00d4b8" stroke-width="1.5" class="v-matrix-v" opacity="0.8" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">APIs</span>
+            <div class="tech-spec">[ GRAPHQL // V1.0 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>GraphQL API Design with Python</h3>
+            <p>Build flexible GraphQL APIs using Strawberry and Ariadne — schema design, resolvers, N+1 problem solving, and subscription-based real-time data.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 20 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="article-card" data-category="devops">
+        <div class="card-index">10</div>
+        <div class="card-image-wrapper">
+          <div class="card-visual-header visual-bayesian">
+            <div class="v-bayesian-wrapper">
+              <svg viewBox="0 0 200 150" class="v-bayesian-svg">
+                <path d="M 20 120 C 50 120 70 40 100 40 C 130 40 150 120 180 120" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3" class="v-prior" />
+                <path d="M 60 120 C 80 120 90 20 110 20 C 130 20 140 120 160 120" fill="none" stroke="#e06b1a" stroke-width="2.5" class="v-posterior" />
+                <circle cx="110" cy="20" r="4" fill="#e06b1a" class="v-posterior-dot" />
+              </svg>
+            </div>
+          </div>
+          <div class="card-image-overlay"></div>
+        </div>
+        <div class="card-glare"></div>
+        <div class="card-content-glass">
+          <div class="card-noise"></div>
+          <div class="card-top">
+            <span class="category-tag">DevOps</span>
+            <div class="tech-spec">[ AWS // V2.0 ]</div>
+          </div>
+          <div class="card-body">
+            <h3>AWS Deployment for Python Backends</h3>
+            <p>Deploy and scale Python backend applications on AWS — EC2, RDS, ElastiCache, ECS Fargate, Load Balancing, and Auto Scaling groups.</p>
+          </div>
+          <div class="card-bottom">
+            <span class="read-time"><i class="far fa-clock"></i> 25 min read</span>
+            <span class="read-more">Analyze <i class="fas fa-chevron-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-left">
+          <p class="copyright">&copy; 2025 Ishfaq Dar</p>
+          <p class="footer-meta">Python Backend Developer</p>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="#top" class="back-to-top">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+              <span>Back to Top</span>
+            </a>
+            <div class="social-links11">
+              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link11">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="made-with">
+        <p>Crafted with <span class="heart-icon">❤️</span> By Ishfaq</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

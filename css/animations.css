@@ -1,0 +1,24 @@
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 5px rgb(0 242 255 / 20%); }
+  50% { box-shadow: 0 0 20px rgb(0 242 255 / 50%); }
+  100% { box-shadow: 0 0 5px rgb(0 242 255 / 20%); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse { animation: neonPulse 3s infinite; }

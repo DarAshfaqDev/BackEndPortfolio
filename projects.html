@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Ishfaq Dar</title>
+  <meta name="description" content="Backend projects by Ishfaq Dar — Python Backend Developer." />
+  <meta name="author" content="Ishfaq Dar" />
+  <link rel="icon" type="image/png" href="img/plogo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/navigation.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive-overrides.css" />
+  <style>
+    .page-hero {
+      padding: 140px 8% 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .page-hero h1 {
+      font-family: Outfit, sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .page-hero h1 span {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-hero p { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+    .projects-section {
+      padding: 2rem 8% 6rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: rgb(255 255 255 / 3%);
+      border: 1px solid rgb(255 255 255 / 8%);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent-cyan);
+    }
+    .project-card:hover {
+      background: rgb(255 255 255 / 5%);
+      border-color: var(--accent-cyan);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgb(0 0 0 / 50%);
+    }
+    .pc-header {
+      display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.85rem;
+    }
+    .pc-emoji { font-size: 1.4rem; }
+    .pc-links { display: flex; gap: 0.4rem; }
+    .pc-link {
+      width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+      border-radius: 6px; border: 1px solid rgb(255 255 255 / 10%);
+      color: var(--text-muted); text-decoration: none; font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+    .pc-link:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+    .project-card h3 { font-size: 1.1rem; color: #fff; margin-bottom: 0.5rem; }
+    .project-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 1rem; }
+    .pc-features { margin-bottom: 1rem; }
+    .pc-feature {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.3rem; line-height: 1.55;
+    }
+    .pc-feature::before { content: '\2014'; color: rgb(255 255 255 / 20%); flex-shrink: 0; }
+    .pc-arch {
+      background: rgb(0 0 0 / 30%); border: 1px solid rgb(255 255 255 / 8%);
+      border-radius: 8px; padding: 0.7rem 1rem;
+      font-size: 0.74rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.65;
+    }
+    .pc-arch strong { color: var(--accent-cyan); }
+    .pc-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .project-tag {
+      padding: 0.2rem 0.55rem; border-radius: 4px;
+      font-size: 0.7rem; border: 1px solid rgb(0 242 255 / 15%);
+      color: var(--accent-cyan); background: rgb(0 242 255 / 6%);
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="js/generative-bg.js"></script>
+  <script defer src="js/common.js"></script>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="logo">
+      <span class="logo-text">ISHFAQ<span class="logo-accent">||</span>Portfolio</span>
+    </div>
+    <nav class="nav-container">
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="articles.html" class="nav-link">Articles</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <div class="hamburger"></div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="bg-animation"></div>
+
+  <section class="page-hero">
+    <h1>Featured <span>Projects</span></h1>
+    <p>Production-grade backend systems I've designed and built.</p>
+  </section>
+
+  <section class="projects-section">
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="pc-header">
+          <div class="pc-emoji">🔐</div>
+          <div class="pc-links">
+            <a href="https://github.com/Dar-Ishfaq-Backend" class="pc-link" target="_blank" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <h3>Auth & User Management API</h3>
+        <p>Secure, scalable authentication system with role-based access control for multi-tenant SaaS applications.</p>
+        <div class="pc-features">
+          <div class="pc-feature">JWT + Refresh token rotation with Redis blacklist</div>
+          <div class="pc-feature">OAuth2 social login (Google, GitHub)</div>
+          <div class="pc-feature">RBAC with fine-grained permission scopes</div>
+          <div class="pc-feature">Rate limiting & brute-force protection</div>
+        </div>
+        <div class="pc-arch"><strong>Architecture:</strong> FastAPI → PostgreSQL + Redis → async SQLAlchemy, Docker + Nginx</div>
+        <div class="pc-tags">
+          <span class="project-tag">FastAPI</span>
+          <span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Redis</span>
+          <span class="project-tag">JWT</span>
+          <span class="project-tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="pc-header">
+          <div class="pc-emoji">✅</div>
+          <div class="pc-links">
+            <a href="https://github.com/Dar-Ishfaq-Backend" class="pc-link" target="_blank" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <h3>Task Management REST API</h3>
+        <p>Full-featured project and task management backend supporting real-time updates, team collaboration, and Kanban-style workflows.</p>
+        <div class="pc-features">
+          <div class="pc-feature">Real-time WebSocket task updates via Celery</div>
+          <div class="pc-feature">Full CRUD with pagination & search filtering</div>
+          <div class="pc-feature">File attachments with S3 / MinIO storage</div>
+          <div class="pc-feature">Automated email reminders via background tasks</div>
+        </div>
+        <div class="pc-arch"><strong>Architecture:</strong> Flask + SQLAlchemy → MySQL + Celery + RabbitMQ. 92% test coverage</div>
+        <div class="pc-tags">
+          <span class="project-tag">Flask</span><span class="project-tag">MySQL</span>
+          <span class="project-tag">Celery</span><span class="project-tag">Pytest</span><span class="project-tag">S3</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="pc-header">
+          <div class="pc-emoji">📝</div>
+          <div class="pc-links">
+            <a href="https://github.com/Dar-Ishfaq-Backend" class="pc-link" target="_blank" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <h3>Blog Backend System</h3>
+        <p>Headless CMS-style blog backend with rich content management, full-text search, tagging, and a public API.</p>
+        <div class="pc-features">
+          <div class="pc-feature">Full-text search with PostgreSQL tsvector indexes</div>
+          <div class="pc-feature">Nested comments with threaded replies</div>
+          <div class="pc-feature">Draft / publish workflow with version history</div>
+          <div class="pc-feature">SEO metadata API with Open Graph support</div>
+        </div>
+        <div class="pc-arch"><strong>Architecture:</strong> FastAPI + PostgreSQL + Alembic → Redis cache → Nginx. ~40ms avg response</div>
+        <div class="pc-tags">
+          <span class="project-tag">FastAPI</span><span class="project-tag">PostgreSQL</span>
+          <span class="project-tag">Alembic</span><span class="project-tag">Redis</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="pc-header">
+          <div class="pc-emoji">📊</div>
+          <div class="pc-links">
+            <a href="https://github.com/Dar-Ishfaq-Backend" class="pc-link" target="_blank" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <h3>Data Analytics Dashboard Backend</h3>
+        <p>High-throughput data ingestion and analytics API processing 500k+ events/day, powering a real-time BI dashboard.</p>
+        <div class="pc-features">
+          <div class="pc-feature">ETL pipeline with Pandas + NumPy for batch processing</div>
+          <div class="pc-feature">Aggregated reporting with parameterized time windows</div>
+          <div class="pc-feature">CSV / Excel export with streamed responses</div>
+          <div class="pc-feature">Webhook ingestion with queue-based processing</div>
+        </div>
+        <div class="pc-arch"><strong>Architecture:</strong> FastAPI → PostgreSQL + TimescaleDB → Redis → Celery ETL workers</div>
+        <div class="pc-tags">
+          <span class="project-tag">FastAPI</span><span class="project-tag">Pandas</span>
+          <span class="project-tag">TimescaleDB</span><span class="project-tag">Celery</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="pc-header">
+          <div class="pc-emoji">🕷</div>
+          <div class="pc-links">
+            <a href="https://github.com/Dar-Ishfaq-Backend" class="pc-link" target="_blank" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <h3>Web Scraping Automation Tool</h3>
+        <p>Distributed web scraping system targeting 50+ sources with automatic retries, proxy rotation, and a REST control API.</p>
+        <div class="pc-features">
+          <div class="pc-feature">Scrapy spiders with rotating proxy middleware</div>
+          <div class="pc-feature">MongoDB for flexible scraped document storage</div>
+          <div class="pc-feature">Scheduled runs via APScheduler + REST triggers</div>
+          <div class="pc-feature">Deduplication fingerprinting with Bloom filters</div>
+        </div>
+        <div class="pc-arch"><strong>Architecture:</strong> Scrapy + aiohttp → MongoDB → FastAPI control plane → Docker Compose</div>
+        <div class="pc-tags">
+          <span class="project-tag">Scrapy</span><span class="project-tag">MongoDB</span>
+          <span class="project-tag">aiohttp</span><span class="project-tag">FastAPI</span><span class="project-tag">Docker</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-main">
+        <div class="footer-left">
+          <p class="copyright">&copy; 2025 Ishfaq Dar</p>
+          <p class="footer-meta">Python Backend Developer</p>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links">
+            <a href="#top" class="back-to-top">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+              <span>Back to Top</span>
+            </a>
+            <div class="social-links11">
+              <a href="https://github.com/Dar-Ishfaq-Backend" target="_blank" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+              <a href="https://www.linkedin.com/in/ishfaq-dar-8ab7563a3/" target="_blank" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+              <a href="mailto:moeedkamraan1125@gmail.com" class="social-link11"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="made-with">
+        <p>Crafted with <span class="heart-icon">❤️</span> By Ishfaq</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

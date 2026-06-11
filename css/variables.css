@@ -1,0 +1,19 @@
+:root {
+  --bg-core: #050505;
+  --bg-glass: rgb(10 10 10 / 60%);
+  --bg-card: rgb(20 20 20 / 40%);
+  --text-main: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --accent-cyan: #00f2ff;
+  --accent-violet: #bd00ff;
+  --accent-gradient: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+
+  --font-main: 'Poppins', sans-serif;
+
+  --glass-blur: blur(12px);
+  --border-light: 1px solid rgb(255 255 255 / 8%);
+  --shadow-neon: 0 0 20px rgb(0 242 255 / 15%);
+
+  --nav-height: 70px;
+  --container-width: 1200px;
+}
